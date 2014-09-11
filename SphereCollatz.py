@@ -10,6 +10,7 @@
 # collatz_read
 # ------------
 
+CacheDic={}
 def collatz_read (r) :
     """
     read two ints
@@ -27,6 +28,8 @@ def collatz_read (r) :
 # ------------
 
 def collatz_eval (i, j) :
+
+    global CacheDic
     """
     i the beginning of the range, inclusive
     j the end       of the range, inclusive
@@ -35,38 +38,37 @@ def collatz_eval (i, j) :
     
     
 
-    CacheList=[]
     if i > j:
         i,j = j,i
     if j//2+1 > i:
         i = j//2+1
-    CacheList=[]
     MaxCycleLength=1
     def CycleCounter(num):
+        TempNum=num
         CycleLength = 1
         while num > 1:
-            if num % 2 == 0:
+            if num in CacheDic:
+                CycleLength += CacheDic[num]-1
+                num = 1
+            elif num % 2 == 0:
                 num =  num//2
                 CycleLength+= 1
             else:
                 num = ((num*3)+1)//2
                 CycleLength+=2
+        CacheDic[TempNum]= CycleLength
         return CycleLength
 
-    #for Cachenum in range (1, 7000):
- #       CacheList.append([Cachenum, CycleCounter(Cachenum)])
+ 
+                      
+    
+    for x in range (i, j+1):
+        tempcount = CycleCounter(x)
+        if tempcount>MaxCycleLength:
+            MaxCycleLength=tempcount
 
-                       
-    for num in range (i, j+1):
-        if 0<num<0:
-            TempCycle = CacheList[num-1][1]
-            if TempCycle>MaxCycleLength:
-                MaxCycleLength=TempCycle
-        else:
-            TempCycle=CycleCounter(num)
-            if TempCycle>MaxCycleLength:
-                MaxCycleLength=TempCycle
     return MaxCycleLength
+    
 
 
 # -------------
