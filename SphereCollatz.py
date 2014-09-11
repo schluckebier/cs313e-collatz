@@ -38,12 +38,12 @@ def collatz_eval (i, j) :
     
     
 
-    if i > j:
+    if i > j:#switch values if j is smaller
         i,j = j,i
-    if j//2+1 > i:
+    if j//2+1 > i:#use optimization which removes values less than half the larger value
         i = j//2+1
     MaxCycleLength=1
-    def CycleCounter(num):
+    def CycleCounter(num):#fuction which finds cycle length and if its a new value adds the value and its cycle lenght to a dictionary. if its a value already stored in the dictionary, then cycle length is looked up rather than re calculated. 
         TempNum=num
         CycleLength = 1
         while num > 1:
@@ -62,12 +62,12 @@ def collatz_eval (i, j) :
  
                       
     
-    for x in range (i, j+1):
+    for x in range (i, j+1):#tests the cycle length against the max. if the value is bigger then it is the new max
         tempcount = CycleCounter(x)
         if tempcount>MaxCycleLength:
             MaxCycleLength=tempcount
 
-    return MaxCycleLength
+    return MaxCycleLength#return max
     
 
 
