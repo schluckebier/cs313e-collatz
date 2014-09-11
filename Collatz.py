@@ -10,6 +10,7 @@
 # collatz_read
 # ------------
 
+
 def collatz_read (r) :
     """
     read two ints
@@ -26,17 +27,26 @@ def collatz_read (r) :
 # collatz_eval
 # ------------
 
+
+        
+            
+
+
 def collatz_eval (i, j) :
     """
     i the beginning of the range, inclusive
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
     """
+    
+    
+
 
     if i > j:
         i,j = j,i
     if j//2+1 > i:
         i = j//2+1
+    CacheList=[]
     MaxCycleLength=1
     def CycleCounter(num):
         CycleLength = 1
@@ -48,12 +58,24 @@ def collatz_eval (i, j) :
                 num = ((num*3)+1)//2
                 CycleLength+=2
         return CycleLength
-                
+
+    for Cachenum in range (1, 700000):
+        CacheList.append([Cachenum, CycleCounter(Cachenum)])
+
+                       
     for num in range (i, j+1):
-        TempMax = CycleCounter(num)
-        if TempMax > MaxCycleLength:
-            MaxCycleLength = TempMax
+        if 0<num<700000:
+            TempCycle = CacheList[num-1][1]
+            if TempCycle>MaxCycleLength:
+                MaxCycleLength=TempCycle
+        else:
+            TempCycle=CycleCounter(num)
+            if TempCycle>MaxCycleLength:
+                MaxCycleLength=TempCycle
     return MaxCycleLength
+            
+    
+
 
 # -------------
 # collatz_print
@@ -64,7 +86,7 @@ def collatz_print (w, i, j, v) :
     print three ints
     w a writer
     i the beginning of the range, inclusive
-    j the end       of the range, inclusive
+    j the end of the range, inclusive
     v the max cycle length
     """
     w.write(str(i) + " " + str(j) + " " + str(v) + "\n")

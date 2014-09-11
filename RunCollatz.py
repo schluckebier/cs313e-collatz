@@ -9,7 +9,7 @@
 # -------
 
 # imports
-# -------
+# 5-------
 
 import sys
 
@@ -31,7 +31,7 @@ collatz_solve(sys.stdin, sys.stdout)
 
 
 % RunCollatz.py < RunCollatz.in > RunCollatz.out
-
+3 3
 
 
 % cat RunCollatz.out

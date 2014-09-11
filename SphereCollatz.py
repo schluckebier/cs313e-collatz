@@ -32,11 +32,15 @@ def collatz_eval (i, j) :
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
     """
+    
+    
 
+    CacheList=[]
     if i > j:
         i,j = j,i
     if j//2+1 > i:
         i = j//2+1
+    CacheList=[]
     MaxCycleLength=1
     def CycleCounter(num):
         CycleLength = 1
@@ -48,11 +52,20 @@ def collatz_eval (i, j) :
                 num = ((num*3)+1)//2
                 CycleLength+=2
         return CycleLength
-                
+
+    #for Cachenum in range (1, 7000):
+ #       CacheList.append([Cachenum, CycleCounter(Cachenum)])
+
+                       
     for num in range (i, j+1):
-        TempMax = CycleCounter(num)
-        if TempMax > MaxCycleLength:
-            MaxCycleLength = TempMax
+        if 0<num<0:
+            TempCycle = CacheList[num-1][1]
+            if TempCycle>MaxCycleLength:
+                MaxCycleLength=TempCycle
+        else:
+            TempCycle=CycleCounter(num)
+            if TempCycle>MaxCycleLength:
+                MaxCycleLength=TempCycle
     return MaxCycleLength
 
 
