@@ -1,0 +1,75 @@
+commit bd670e03937b942224afc1f8a7c022cb0b3f90d6
+Author: schluckebier <schluckebierd@gmail.com>
+Date:   Thu Sep 11 18:29:54 2014 -0500
+
+    Final Commit
+    
+    I hope
+
+commit 01230329ce4f1585aa098b03b5c50ef5c62d2ef4
+Author: schluckebier <schluckebierd@gmail.com>
+Date:   Wed Sep 10 22:11:12 2014 -0500
+
+    matching in and out files
+
+commit da916ab332acfdd96f869a945eee826faec07daa
+Author: schluckebier <schluckebierd@gmail.com>
+Date:   Wed Sep 10 21:53:19 2014 -0500
+
+    fixes #10
+    
+    added the pydoc file
+
+commit a2dfa7386ee7eeeebddd2a6cf30a3e18e96d0874
+Author: schluckebier <schluckebierd@gmail.com>
+Date:   Wed Sep 10 21:43:31 2014 -0500
+
+    fixes #7
+    
+    add file with 1000 lines of code
+
+commit 4074249f897d11c4ff6293142b5925edd6f70212
+Author: schluckebier <schluckebierd@gmail.com>
+Date:   Wed Sep 10 21:42:18 2014 -0500
+
+    fixes number 9
+    
+    Have a working Cache
+
+commit 69a5a5bbfec21b1861f63c4c9e0ece4b4e8ceeaa
+Author: schluckebier <schluckebierd@gmail.com>
+Date:   Wed Sep 10 20:43:48 2014 -0500
+
+    I don't know what going on. need to save
+
+commit 76439483272058648be6adcb95503d63ce509b6a
+Author: schluckebier <schluckebierd@gmail.com>
+Date:   Tue Sep 9 23:12:44 2014 -0500
+
+    Fixes #5 and #6
+
+commit 6f47573aecf7a58bf0c4c0dbfe28ec179505aa95
+Author: schluckebier <schluckebierd@gmail.com>
+Date:   Tue Sep 9 21:03:55 2014 -0500
+
+    Working Collatz-eval. Code seemingly gives good values
+
+commit 4c399930e21075bd13c2f2820490b7567ac1d3a5
+Author: schluckebier <schluckebierd@gmail.com>
+Date:   Tue Sep 9 20:52:20 2014 -0500
+
+    added more tests - Fixes #3
+
+commit f636cd09a0c3579e93c749f1924cf2ae09e658d7
+Author: schluckebier <schluckebierd@gmail.com>
+Date:   Tue Sep 9 20:34:08 2014 -0500
+
+    Fixes #2
+
+commit 554205a73f00574a5782e1013b496fe66d413823
+Author: schluckebier <schluckebierd@gmail.com>
+Date:   Mon Sep 8 20:57:01 2014 -0500
+
+    This fixes #1
+    
+    Added files from the public class repo to private repo.
