@@ -29,18 +29,26 @@ def collatz_read (r) :
 
 
 def collatz_eval (i, j) :
+ 
 
-    global CacheDic
     """
     i the beginning of the range, inclusive
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
+    ________________________
+    A function is given a value.
+    If the value is new to the fuction it calculates its cycle length and stores it.
+    it it has seen the value it looks up the value (Cache)
+    This cycle length is compared to the current max cycle length to find the overall max.
+    
     """
-    
-    
+    global CacheDic
 
     if i > j:#switch values if j is smaller
         i,j = j,i
+    assert i <= j
+    assert i>=0
+    assert j>=0
     if j//2+1 > i:#use optimization which removes values less than half the larger value
         i = j//2+1
     MaxCycleLength=1
@@ -69,6 +77,7 @@ def collatz_eval (i, j) :
             MaxCycleLength=tempcount
 
     return MaxCycleLength#return max
+    assert MaxCycleLength >= 1
 
 
 # -------------
